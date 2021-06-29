@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlApi: 'https://fr.jooble.org/api/4dac0445-fe2e-4518-86fd-b77886c8466c',
 };
 
 /*

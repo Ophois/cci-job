@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ emploi.title }}</h5>
+    <h6 class="card-subtitle">{{ emploi.location }} </h6>
+    <p class="card-text" [innerHTML]="emploi.snippet | safe"></p>
+    <ul class="list-group">
+      <li class="list-group-item">Salaire: {{ emploi.salary }}</li>
+      <li class="list-group-item">Source: {{ emploi.source }}</li>
+      <li class="list-group-item">Type: {{ emploi.type }}</li>
+      <li class="list-group-item">Compagnie: {{ emploi.company }}</li>
+      <li class="list-group-item">Mise à jour: {{ emploi.updated | date:'dd/MM/YYYY' }}</li>
+    </ul>
+    <div class="text-center">
+      <a [href]="emploi.link" class="btn btn-primary" target="_blank">Annonce complète</a>
+      <button class="btn btn-primary" [disabled]="status" (click)="gest(emploi)">{{ btnText }}</button>
+    </div>
+  </div>
+</div>
+<br>

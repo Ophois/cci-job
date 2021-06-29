@@ -1,0 +1,9 @@
+<h1 class="text-align">Mes annonces</h1>
+<div *ngIf="msg" class="alert alert-warning text-center"> {{ msg }}</div>
+<div *ngIf="liste.length > 0" class="row justify-content-center">
+  <h4 class="text-center">{{ liste.length }} annonces enregistées</h4>
+  <div class="col-8" *ngFor="let job of liste">
+    <app-job-tpl [emploi]="job" [mode]="mode" (saved)="supprimer($event)">
+    </app-job-tpl>
+  </div>
+</div>

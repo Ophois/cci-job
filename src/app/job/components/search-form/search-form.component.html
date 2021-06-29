@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="page">
+  <div class="form-group">
+    <label for="emploi">Poste:</label>
+    <input type="text" formControlName="keywords" id="emploi" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="ville">Ville:</label>
+    <input type="text" formControlName="location" id="ville" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="salaire">Salaire:</label>
+    <input type="number" formControlName="salary" id="salaire" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="rayon">Rayon:</label>
+    <select formControlName="radius" id="rayon" class="form-control">
+      <option value="0">0 km</option>
+      <option value="8">< 8 km</option>
+      <option value="16">< 16 km</option>
+      <option value="24">< 24 km</option>
+      <option value="40">< 40 km</option>
+      <option value="80">< 80 km</option>
+    </select>
+  </div>
+  <div class="form-check">
+    <h4>Type d'offre:</h4>
+    <p>
+      <input type="radio" formControlName="searchMode" value="1" id="type1" class="form-check-input">
+      <label for="type1" class="form-check-label"> Offres d'emploi recommandées + JPD</label>
+    </p>
+    <p>
+      <input type="radio" formControlName="searchMode" value="2" id="type2" class="form-check-input">
+      <label for="type2" class="form-check-label"> Offres d'emploi recommandées</label>
+    </p>
+    <p>
+      <input type="radio" formControlName="searchMode" value="3" id="type3" class="form-check-input">
+      <label for="type3" class="form-check-label"> Toutes les offres d'emploi</label>
+    </p>
+  </div>
+  <div class="text-center">
+    <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Rechercher">
+    <button type="reset" class="btn btn-primary" (click)="reset()">Effacer</button>
+  </div>
+</form>
+

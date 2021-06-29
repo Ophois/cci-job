@@ -1,0 +1,15 @@
+<h1 class="text-center">Emploi</h1>
+<app-search-form [init]='recherche' (submitted)="search($event)" (reseted)="reset()">
+</app-search-form>
+<div *ngIf="liste" class="row justify-content-center">
+  <h4 class="text-center">{{ liste.totalCount }} emploi trouvés </h4>
+  <div class="col-8" *ngFor="let job of liste.jobs">
+    <app-job-tpl [emploi]="job" [mode]="mode" (saved)="sauvegarde($event)" ></app-job-tpl>
+  </div>
+  <div class="text-center">
+    <button [disabled]="p1" class="btn btn-primary" (click)="first()"><<</button>
+    <button [disabled]="p1" class="btn btn-primary" (click)="prev()"><</button>
+    <button [disabled]="pl" class="btn btn-primary" (click)="next()">></button>
+    <button [disabled]="pl" class="btn btn-primary" (click)="last()">>></button>
+  </div>
+</div>
