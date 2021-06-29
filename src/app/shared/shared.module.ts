@@ -4,17 +4,19 @@ import { RouterModule } from '@angular/router';
 import { IconsModule } from '../icons/icons.module';
 import { JobTplComponent } from './components/job-tpl/job-tpl.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { MyValidators } from './directives/mon-validator.directive';
 
 
 
 @NgModule({
   declarations: [
     JobTplComponent,
-    SafePipe
+    SafePipe,
+    MyValidators
   ],
   imports: [
     CommonModule, RouterModule, IconsModule
   ],
-  exports: [IconsModule, JobTplComponent,SafePipe]
+  exports: [IconsModule, JobTplComponent,SafePipe, MyValidators]
 })
 export class SharedModule { }

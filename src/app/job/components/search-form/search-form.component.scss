@@ -1,1 +1,7 @@
-
+/* rappel, Angular ajoute des classes CSS aux éléments de formulaire */
+.ng-touched .ng-invalid {
+  border: 3px solid red;
+}
+.ng-touched .ng-valid {
+  border: 3px solid green;
+}

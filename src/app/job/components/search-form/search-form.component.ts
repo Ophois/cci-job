@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MyValidators } from 'src/app/shared/directives/mon-validator.directive';
+
 
 @Component({
   selector: 'app-search-form',
@@ -24,13 +26,14 @@ export class SearchFormComponent implements OnInit {
    }
   /* initialisation du formulaire
      On crée un objet formulaire, avec les valeurs par défaut
-     et les validateurs si besoin */
+     et les validateurs si besoin
+     MyValidators.validSalary est un "custom validator */
   ngOnInit(): void {
     this.form = this.fb.group({
       keywords: [this.init.keywords, Validators.required],
       location: [this.init.location, Validators.required],
       radius: [this.init.radius],
-      salary: [this.init.salary],
+      salary: [this.init.salary, MyValidators.validSalary],
       searchMode: [this.init.searchMode],
       page: [this.init.page]
     });

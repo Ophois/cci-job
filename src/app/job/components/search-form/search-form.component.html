@@ -11,6 +11,9 @@
   <div class="form-group">
     <label for="salaire">Salaire:</label>
     <input type="number" formControlName="salary" id="salaire" class="form-control">
+    <div *ngIf="form.controls['salary'].touched && form.controls['salary'].invalid">
+      <p class="alert alert-danger">Le salaire doit se trouver entre 1000 et 5000 € mensuels</p>
+      <span>{{ form.controls['salary'].errors | json }}</span></div>
   </div>
   <div class="form-group">
     <label for="rayon">Rayon:</label>
