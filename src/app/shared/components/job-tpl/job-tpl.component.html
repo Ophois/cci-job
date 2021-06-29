@@ -12,7 +12,10 @@
     </ul>
     <div class="text-center">
       <a [href]="emploi.link" class="btn btn-primary" target="_blank">Annonce complète</a>
-      <button class="btn btn-primary" [disabled]="status" (click)="gest(emploi)">{{ btnText }}</button>
+      <button [class]="classes" [disabled]="status" (click)="gest(emploi)">
+        <app-icon-save *ngIf="btnText=='Enregistrer'"></app-icon-save>
+        <app-icon-del *ngIf="btnText=='Supprimer'"></app-icon-del>
+      </button>
     </div>
   </div>
 </div>

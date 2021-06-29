@@ -9,6 +9,7 @@ import * as dayjs from 'dayjs';
 export class FooterComponent implements OnInit {
 
   constructor() { }
+  //affichage de l'année avec la bibliothèque dayjs
   public date = dayjs().format('YYYY');
 
   ngOnInit(): void {

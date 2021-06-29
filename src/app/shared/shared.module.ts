@@ -13,7 +13,7 @@ import { SafePipe } from './pipes/safe.pipe';
     SafePipe
   ],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, IconsModule
   ],
   exports: [IconsModule, JobTplComponent,SafePipe]
 })

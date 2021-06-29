@@ -39,8 +39,12 @@
     </p>
   </div>
   <div class="text-center">
-    <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Rechercher">
-    <button type="reset" class="btn btn-primary" (click)="reset()">Effacer</button>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+      <app-icon-search></app-icon-search>
+    </button>
+    <button type="reset" class="btn btn-warning" (click)="reset()">
+      <app-icon-reset></app-icon-reset>
+    </button>
   </div>
 </form>
 

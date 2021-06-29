@@ -2,14 +2,22 @@
 <app-search-form [init]='recherche' (submitted)="search($event)" (reseted)="reset()">
 </app-search-form>
 <div *ngIf="liste" class="row justify-content-center">
-  <h4 class="text-center">{{ liste.totalCount }} emploi trouvés </h4>
+  <h4 class="text-center">{{ liste.totalCount }} emploi trouvés - Page {{ recherche.page }} / {{ lastPage }}  </h4>
   <div class="col-8" *ngFor="let job of liste.jobs">
     <app-job-tpl [emploi]="job" [mode]="mode" (saved)="sauvegarde($event)" ></app-job-tpl>
   </div>
   <div class="text-center">
-    <button [disabled]="p1" class="btn btn-primary" (click)="first()"><<</button>
-    <button [disabled]="p1" class="btn btn-primary" (click)="prev()"><</button>
-    <button [disabled]="pl" class="btn btn-primary" (click)="next()">></button>
-    <button [disabled]="pl" class="btn btn-primary" (click)="last()">>></button>
+    <button [disabled]="p1" class="btn btn-primary" (click)="first()">
+      <app-icon-first></app-icon-first>
+    </button>
+    <button [disabled]="p1" class="btn btn-primary" (click)="prev()">
+      <app-icon-prev></app-icon-prev>
+    </button>
+    <button [disabled]="pl" class="btn btn-primary" (click)="next()">
+      <app-icon-next></app-icon-next>
+    </button>
+    <button [disabled]="pl" class="btn btn-primary" (click)="last()">
+      <app-icon-last></app-icon-last>
+    </button>
   </div>
 </div>

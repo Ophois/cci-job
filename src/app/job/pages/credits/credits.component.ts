@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./credits.component.scss']
 })
 export class CreditsComponent implements OnInit {
-
+  //tableau pour les crédits
   public credits: any[];
   constructor() {
+    // chaque crédit à un nom et une url pour afficher sur la page
+    // avec une boucle (*ngFor)
     this.credits = [
       {nom: 'Angular', url: 'http://angular.io'},
       {nom: 'Bootstrap', url: 'http://getbootstrap.com'},
